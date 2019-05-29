@@ -24,7 +24,7 @@ react-native run-android
 
 ### 应用截图
 <p align="left">
-<img width=200 title="" src="https://github.com/mg365/RNExampleApp/blob/master/images/pic.png">
+<img width=200 title="" src="https://github.com/mg365/RNExampleApp/blob/master/image/pic.png">
 </p>
 
 
