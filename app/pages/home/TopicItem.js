@@ -20,12 +20,12 @@ import ImageCached from "../../components/ImageCached";
 const icons = item => (
 	[
 		{
-			name: item.isLike ? 'ios-heart' : 'ios-heart-outline',
+			name: item.isLike ? 'ios-heart' : 'ios-heart',
 			color: item.isLike ? '#FF4500' : 'black',
 			count: item.likes
 		},
-		{name: 'ios-chatbubbles-outline', count: item.comments},
-		{name: 'ios-share-outline', count: item.shares},
+		{name: 'ios-chatbubbles', count: item.comments},
+		{name: 'ios-share', count: item.shares},
 	]
 );
 

@@ -75,7 +75,7 @@ export default class TopicList extends NavigatorPage {
 		}, config.timeout)
 		let uri = this.props.uri;
 		config.loadData(_ => {
-			request.post(uri, {
+/*			request.post(uri, {
 				pageNum: this.page,
 				pageSize: config.pageSize,
 				userId: this.props.userId,
@@ -97,7 +97,51 @@ export default class TopicList extends NavigatorPage {
 					isLoading: false
 				})
 				// console.warn(`requestError: ${error}`)
-			})
+			})*/
+			let res = {
+				code:0,
+                data:{
+                    total:2,
+                    list:[
+						{
+                            user:{
+                                username:'于何处'
+							},
+							image:"http://pic15.nipic.com/20110628/1369025_192645024000_2.jpg",
+                            createdAt:"2019-05-29",
+                            categoryName:"情感",
+                            optionType:1,
+                            limitType:1,
+                            isJoin:true,
+                            content:'欢迎来到于何处，万千世界你选择了我，说说你对我的第一印象吧',
+                            joins:10000
+						},
+                        {
+                            user:{
+                                username:'于何处'
+                            },
+                            image:"http://pic9.nipic.com/20100923/2531170_140325352643_2.jpg",
+                            createdAt:"2019-05-29",
+                            categoryName:"情感",
+                            optionType:2,
+                            limitType:2,
+                            isJoin:true,
+                            content:'欢迎来到于何处，万千世界你选择了我，说说你对我的第一印象吧',
+                            joins:10000
+                        }
+					]
+				}
+			}
+            let newState = {
+                isLoading: false
+            };
+            if (res.code === 0) {
+                this.total = res.data.total;
+                this.page++;
+                let list = this.state.list;
+                newState.list = list.concat(res.data.list)
+            }
+            this.setState(newState)
 		})
 		
 	}
