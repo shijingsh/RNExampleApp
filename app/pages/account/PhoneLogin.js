@@ -114,11 +114,11 @@ export default class PhoneLogin extends Component {
 	}
 	//登录
 	_login = () => {
-		let deviceInfo = this.getDeviceInfo();
+		//let deviceInfo = this.getDeviceInfo();
 		let body = {
 			phone: this.state.phone,
 			vCode: this.state.verifyCode,
-			...deviceInfo
+			//...deviceInfo
 		};
 		
 		if (body.phone.length < 11 || body.vCode.length < 6) {
