@@ -13,26 +13,24 @@ import {
 
 import {TabView, Badge, NavigationBar} from 'teaset'
 import HomeIndex from "../pages/home/HomeIndex";
-import MessageIndex from "../pages/message/MessageIndex";
+//import MessageIndex from "../pages/message/MessageIndex";
 import styleUtil from "../common/styleUtil";
-import DiscoveryIndex from "../pages/discovery/DiscoveryIndex";
-import AccountIndex from "../pages/account/AccountIndex";
+//import DiscoveryIndex from "../pages/discovery/DiscoveryIndex";
+//import AccountIndex from "../pages/account/AccountIndex";
 import {Icon} from 'react-native-elements'
 import navigate from "./navigate";
-import AddTopic from "../pages/topic/AddTopic";
+//import AddTopic from "../pages/topic/AddTopic";
 import toast from "../common/toast";
 import PhoneLogin from "../pages/account/PhoneLogin";
 import config from "../common/config";
-import FriendDynamic from "../pages/message/FriendDynamic";
-import JPushModule from 'jpush-react-native';
-import Search from "../pages/discovery/Search";
-import FriendDynamicMsgList from "../pages/message/FriendDynamicMsgList";
-import TopicDetail from "../pages/home/TopicDetail";
+//import FriendDynamic from "../pages/message/FriendDynamic";
+//import JPushModule from 'jpush-react-native';
+//import Search from "../pages/discovery/Search";
 import request from "../common/request";
 import utils from "../common/utils";
-import ChatList from "../pages/message/ChatList";
-import BadgeAndroid from 'react-native-android-badge'
-import {EVENTS} from "../common/IMessage";
+//import ChatList from "../pages/message/ChatList";
+//import BadgeAndroid from 'react-native-android-badge'
+//import {EVENTS} from "../common/IMessage";
 
 const ACTIVE_STYLE = {width: 28, height: 28};
 
@@ -80,9 +78,9 @@ export default class TabNavBar extends React.Component {
 	
 	componentWillMount() {
 		DeviceEventEmitter.addListener('updateUser', val => this.updateUser(val));
-		DeviceEventEmitter.addListener('updateFriendBadge', val => this.updateFriendBadge(val));
-		DeviceEventEmitter.addListener('updateMessageBadge', val => this.updateMessageBadge(val));
-		DeviceEventEmitter.addListener('updateDynamicBadge', val => this.updateDynamicBadge(val));
+		//DeviceEventEmitter.addListener('updateFriendBadge', val => this.updateFriendBadge(val));
+		//DeviceEventEmitter.addListener('updateMessageBadge', val => this.updateMessageBadge(val));
+		//DeviceEventEmitter.addListener('updateDynamicBadge', val => this.updateDynamicBadge(val));
 		AppState.addEventListener('change', this.handleAppStateChange);
 		NetInfo.isConnected.addEventListener(
 			'connectionChange',
@@ -99,7 +97,7 @@ export default class TabNavBar extends React.Component {
 	componentDidMount() {
 		// config.removeAllChatList()
 		this.init();
-		this.initJPush();
+		//this.initJPush();
 		this.spring();
 	}
 	
@@ -107,18 +105,18 @@ export default class TabNavBar extends React.Component {
 		DeviceEventEmitter.removeAllListeners('updateUser');
 		DeviceEventEmitter.removeAllListeners('updateFriendBadge');
 		AppState.removeEventListener('change', this.handleAppStateChange);
-		
+		/*
 		JPushModule.removeReceiveCustomMsgListener(receiveCustomMsgEvent)
 		JPushModule.removeReceiveNotificationListener(receiveNotificationEvent)
 		JPushModule.removeReceiveOpenNotificationListener(openNotificationEvent)
 		JPushModule.removeGetRegistrationIdListener(getRegistrationIdEvent)
 		JPushModule.removeReceiveNotificationListener(this.receiveNotification);
-		JPushModule.clearAllNotifications()
+		JPushModule.clearAllNotifications()*/
 		NetInfo.isConnected.removeEventListener(
 			'connectionChange',
 			this.handleFirstConnectivityChange
 		);
-		imessage.closePing()
+		//imessage.closePing()
 	}
 	
 	getUserInfo = () => {
@@ -223,21 +221,21 @@ export default class TabNavBar extends React.Component {
 	};
 	
 	abnormalLogin = () => {
-		imessage.closeWebSocket(true);
+		/*imessage.closeWebSocket(true);
 		JPushModule.deleteAlias(() => {
-		});
+		});*/
 		this.updateUser({});
 		config.removeUser();
 	};
 	
 	getTopicMsg = () => {
 		//获取新的题目通知消息
-		imessage
+		/*imessage
 			.onTopicMsgReceive(res => {
 				if (res.code !== 0) return;
-			})
+			})*/
 	}
-	
+	/*
 	initJPush = () => {
 		if (Platform.OS === 'android') {
 			JPushModule.initPush();
@@ -266,7 +264,7 @@ export default class TabNavBar extends React.Component {
 			// console.log(registrationId)
 		})
 	};
-	
+
 	setJPushAlias = (alias) => {
 		JPushModule.setAlias(alias, map => {
 			if (map.errorCode === 0) {
@@ -284,7 +282,7 @@ export default class TabNavBar extends React.Component {
 		});
 		this.updateMessageBadge(MessageBadge + unreadMsg)
 	};
-	
+	 */
 	handleAppStateChange = (nextAppState) => {
 		if (!nextAppState.match(/inactive|background|active/)) {
 			return;
@@ -366,7 +364,7 @@ export default class TabNavBar extends React.Component {
 		config.setUser(user);
 		this.setState({user})
 	}
-	
+	/*
 	updateMessageBadge = (n) => {
 		if (n <= 0) {
 			n = 0;
@@ -404,7 +402,7 @@ export default class TabNavBar extends React.Component {
 			friendBadgeCount: count
 		})
 	};
-	
+	*/
 	onchangeTab = index => {
 		this.setState({activeIndex: index})
 	};
@@ -455,7 +453,7 @@ export default class TabNavBar extends React.Component {
 					if (!config.user || !config.user._id || !config.user.accessToken) {
 						navigate.push(PhoneLogin)
 					} else {
-						navigate.push(AddTopic)
+						//navigate.push(AddTopic)
 					}
 				}}
 			/>
@@ -515,7 +513,7 @@ export default class TabNavBar extends React.Component {
 						}
 					/>
 				</TabView.Sheet>
-				<TabView.Sheet
+{/*				<TabView.Sheet
 					title='好友'
 					icon={require('../assets/image/friend.png')}
 					onPress={this.spring}
@@ -582,7 +580,7 @@ export default class TabNavBar extends React.Component {
 					}}
 				>
 					<AccountIndex user={user}/>
-				</TabView.Sheet>
+				</TabView.Sheet>*/}
 			</TabView>
 		);
 	}

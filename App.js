@@ -82,5 +82,6 @@ class App extends React.Component {
 let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
 
 App = CodePush(codePushOptions)(App);
+ */
 export default App;
-*/
+
