@@ -57,7 +57,7 @@ export default class AccountLogin extends Component {
 		};
 		
 		toast.modalLoading();
-		request.post(config.api.baseURI + config.api.accountLogin, body)
+/*		request.post(config.api.baseURI + config.api.accountLogin, body)
 			.then(res => {
 				toast.modalLoadingHide()
 				if (res.code === 0) {
@@ -76,7 +76,27 @@ export default class AccountLogin extends Component {
 				// console.warn(err)
 				toast.modalLoadingHide()
 				toast.fail('登录失败')
-			})
+			})*/
+        toast.modalLoadingHide()
+		let res = {
+            code:0,
+            accessToken:"2423424234324",
+            data:{
+                _id:'10001',
+                username:'于何处'
+            }
+		}
+        if (res.code === 0) {
+            let user = res.data;
+            user.accessToken = res.accessToken;
+            user.vibration = true;
+            //this.setJPushAlias(user.accessToken);
+            TabNavBar.updateUser(user);
+            //imessage.pingPong();
+            toast.success('登录成功');
+            config.setIsLogined();
+            navigate.popToTop()
+        }
 	}
 	
 	setJPushAlias = (alias) => {

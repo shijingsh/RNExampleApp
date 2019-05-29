@@ -66,7 +66,7 @@ export default class PhoneLogin extends Component {
 		let phone = this.state.phone;
 		if (phone.length < 11) return;
 		toast.modalLoading();
-		request.post(config.api.baseURI + config.api.sendVerifyCode, {
+/*		request.post(config.api.baseURI + config.api.sendVerifyCode, {
 			phone
 		}).then(res => {
 			toast.modalLoadingHide()
@@ -90,8 +90,27 @@ export default class PhoneLogin extends Component {
 			console.warn(err)
 			toast.modalLoadingHide()
 			toast.fail('获取验证码失败')
-		})
-		
+		})*/
+        toast.modalLoadingHide()
+        // console.log(res)
+        let res = {
+        	code:0
+		}
+        if (res.code === 0) {
+            toast.success('短信验证码已发送');
+            // alert(res.data)
+            this.setState({
+                isSend: true,
+                isCountEnd: false
+            })
+        }
+        else if (res.code === 10) {
+            this.setState({
+                isSend: true,
+                isCountEnd: false
+            })
+            alert(res.msg);
+        }
 	}
 	//登录
 	_login = () => {
@@ -106,7 +125,7 @@ export default class PhoneLogin extends Component {
 			return
 		}
 		toast.modalLoading();
-		request.post(config.api.baseURI + config.api.login, body)
+/*		request.post(config.api.baseURI + config.api.login, body)
 			.then(res => {
 				toast.modalLoadingHide()
 				if (res.code === 0) {
@@ -125,7 +144,27 @@ export default class PhoneLogin extends Component {
 				// console.warn(err)
 				toast.modalLoadingHide()
 				toast.fail('登录失败')
-			})
+			})*/
+        toast.modalLoadingHide();
+        let res = {
+            code:0,
+            accessToken:"2423424234324",
+            data:{
+                _id:'10001',
+                username:'于何处'
+			}
+        }
+        if (res.code === 0) {
+            let user = res.data;
+            user.accessToken = res.accessToken;
+            user.vibration = true;
+            //--this.setJPushAlias(user.accessToken);
+            TabNavBar.updateUser(user);
+            //--imessage.pingPong();
+            toast.success('登录成功');
+            config.setIsLogined();
+            navigate.pop()
+        }
 	}
 	
 	setJPushAlias = (alias) => {

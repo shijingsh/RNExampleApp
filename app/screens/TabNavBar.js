@@ -13,10 +13,10 @@ import {
 import NetInfo from "@react-native-community/netinfo";
 import {TabView, Badge, NavigationBar} from 'teaset'
 import HomeIndex from "../pages/home/HomeIndex";
-//import MessageIndex from "../pages/message/MessageIndex";
+import MessageIndex from "../pages/message/MessageIndex";
 import styleUtil from "../common/styleUtil";
-//import DiscoveryIndex from "../pages/discovery/DiscoveryIndex";
-//import AccountIndex from "../pages/account/AccountIndex";
+import DiscoveryIndex from "../pages/discovery/DiscoveryIndex";
+import AccountIndex from "../pages/account/AccountIndex";
 import {Icon} from 'react-native-elements'
 import navigate from "./navigate";
 //import AddTopic from "../pages/topic/AddTopic";
@@ -123,7 +123,7 @@ export default class TabNavBar extends React.Component {
 		if (!config.user._id) {
 			return;
 		}
-		request.post(config.api.baseURI + config.api.getUserInfo)
+/*		request.post(config.api.baseURI + config.api.getUserInfo)
 			.then(res => {
 				if (res.code === 0) {
 					let user = res.data;
@@ -136,14 +136,33 @@ export default class TabNavBar extends React.Component {
 						this.updateUser(oldUser);
 					}
 				}
-			}).catch()
+			}).catch()*/
+
+        let res = {
+            code:0,
+            data:{
+                _id:'10001',
+                username:'于何处'
+            }
+        }
+        if (res.code === 0) {
+            let user = res.data;
+            let oldUser = config.user;
+            if (user._id === oldUser._id) {
+                oldUser = {
+                    ...oldUser,
+                    ...user
+                };
+                this.updateUser(oldUser);
+            }
+        }
 	}
 	
 	init = () => {
 		config.getUser().then(user => {
 			this.setState({isLoaded: true});
 			if (user._id) {
-				imessage.init(config.api.webSocketURI + user._id + '/' + user.accessToken);
+				//imessage.init(config.api.webSocketURI + user._id + '/' + user.accessToken);
 				this.updateUser(user);
 				this.getUserInfo(user._id);
 				this.getNewDynamicCount();
@@ -513,7 +532,7 @@ export default class TabNavBar extends React.Component {
 						}
 					/>
 				</TabView.Sheet>
-{/*				<TabView.Sheet
+				<TabView.Sheet
 					title='好友'
 					icon={require('../assets/image/friend.png')}
 					onPress={this.spring}
@@ -541,7 +560,7 @@ export default class TabNavBar extends React.Component {
 				>
 					<MessageIndex user={user} currentAppState={this.state.currentAppState}/>
 				</TabView.Sheet>
-				{custom ? this.renderCustomButton() : null}
+                {custom ? this.renderCustomButton() : null}
 				<TabView.Sheet
 					title='发现'
 					icon={require('../assets/image/discovery.png')}
@@ -580,7 +599,7 @@ export default class TabNavBar extends React.Component {
 					}}
 				>
 					<AccountIndex user={user}/>
-				</TabView.Sheet>*/}
+				</TabView.Sheet>
 			</TabView>
 		);
 	}
