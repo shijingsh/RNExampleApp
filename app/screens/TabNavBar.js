@@ -5,12 +5,12 @@ import {
 	AppState,
 	DeviceEventEmitter,
 	Vibration,
-	NetInfo,
 	Animated,
 	Alert,
 	StatusBar
 } from 'react-native'
 
+import NetInfo from "@react-native-community/netinfo";
 import {TabView, Badge, NavigationBar} from 'teaset'
 import HomeIndex from "../pages/home/HomeIndex";
 //import MessageIndex from "../pages/message/MessageIndex";
@@ -504,7 +504,7 @@ export default class TabNavBar extends React.Component {
 								}}
 							>
 								<Icon
-									name={'ios-search-outline'}
+									name={'ios-search'}
 									type={'ionicon'}
 									color={styleUtil.navIconColor}
 									size={30}
