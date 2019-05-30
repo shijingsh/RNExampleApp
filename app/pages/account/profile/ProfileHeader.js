@@ -246,8 +246,10 @@ export default class ProfileHeader extends React.Component {
 						style: {
 							display: followLoading ? 'none' : 'flex'
 						},
-						name: isFollow ? 'check' : 'add',
-						size: 20
+						name: isFollow ? 'person-add' : 'person-add',
+						size: 20,
+						color: "white",
+						type:"material"
 					}}
 					small
 					rounded
@@ -264,6 +266,7 @@ export default class ProfileHeader extends React.Component {
 						},
 						name: isFriend ? 'send-o' : id === '4gYMBEVlpk' ? 'send-o' : 'person-add',
 						size: 20,
+						color: "white",
 						type: isFriend ? 'font-awesome' : id === '4gYMBEVlpk' ? 'font-awesome' : 'material'
 					}}
 					small

@@ -32,14 +32,15 @@ import toast from "../../common/toast";
 //import ShareWeChat from "../../components/ShareWeChat";
 import UserIntegral from "./UserIntegral";
 import AboutUs from "./AboutUs";
+import AccountSecurity from "./AccountSecurity";
 
 const list = [
-	// {
-	// 	title: '账户安全',
-	// 	icon: 'lock',
-	// 	type: 'materialIcons',
-	// 	onPress: _ => navigate.push(AccountSecurity)
-	// },
+	 {
+	 	title: '账户安全',
+	 	icon: 'lock',
+	 	type: 'MaterialIcons',
+	 	onPress: _ => navigate.push(AccountSecurity)
+	 },
 	{
 		title: '我的积分',
 		icon: require('../../assets/image/integral.png'),
@@ -192,7 +193,7 @@ export default class AccountIndex extends NavigatorPage {
 			navigate.push(PhoneLogin);
 			return;
 		}
-		request.post(config.api.baseURI + config.api.signIn)
+/*		request.post(config.api.baseURI + config.api.signIn)
 			.then(res => {
 				if (res.code === 0) {
 					let user = this.props.user;
@@ -201,7 +202,12 @@ export default class AccountIndex extends NavigatorPage {
 					TabNavBar.updateUser(user);
 					Alert.alert('签到成功，奖励3积分');
 				}
-			}).catch()
+			}).catch()*/
+        let user = this.props.user;
+        user.isSignIn = true;
+        user.integral += 3;
+        TabNavBar.updateUser(user);
+        Alert.alert('签到成功，奖励3积分');
 	};
 	
 	_renderContent = () => {

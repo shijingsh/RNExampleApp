@@ -110,7 +110,7 @@ export default class Profile extends Component {
 		// if (this.props._id === config.user._id || this.props.friendUser) {
 		// 	return
 		// }
-		request.post(config.api.baseURI + config.api.userProfile, {
+/*		request.post(config.api.baseURI + config.api.userProfile, {
 			userId: this.props._id
 		}).then(res => {
 			if (res.code === 0) {
@@ -153,7 +153,59 @@ export default class Profile extends Component {
 					isLoaded: true
 				})
 			}
-		})
+		})*/
+		let res = {
+			code:0,
+            data:{
+                //_id:'10001',
+                //username:'于何处',
+                _id:'10002',
+                username:'在何处',
+                background:"http://k.zol-img.com.cn/sjbbs/7692/a7691515_s.jpg",
+                commonFollows:10,
+                commonFriends:5
+            }
+		}
+        if (res.code === 0) {
+            let user = res.data;
+            let oldUser = config.user;
+            if (user._id === oldUser._id) {
+                oldUser = {
+                    ...oldUser,
+                    ...user
+                };
+                TabNavBar.updateUser(oldUser);
+            }
+            let tabList = this.state.tabList;
+            if (!this.isSelf) {
+                tabList.push({
+                    screen: UserList,
+                    title: '共同关注',
+                    total:user.commonFollows,
+                    icon: require('../../assets/image/common_follow.png'),
+                    passProps: {
+                        uri: config.api.baseURI + config.api.getCommonFollowList
+                    }
+                });
+                if (user.isFriend) {
+                    tabList.push({
+                        screen: UserList,
+                        title: '共同好友',
+                        total: user.commonFriends,
+                        icon: require('../../assets/image/common_friend.png'),
+                        passProps: {
+                            uri: config.api.baseURI + config.api.getCommonFriendList
+                        }
+                    })
+                }
+            }
+
+            this.setState({
+                user,
+                tabList,
+                isLoaded: true
+            })
+        }
 	}
 	
 	renderProfileHeader = (user, scrollY) => {

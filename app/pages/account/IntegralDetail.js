@@ -36,7 +36,7 @@ export default class IntegralDetail extends React.Component {
 			isLoading: true
 		});
 		config.loadData(_ => {
-			request.post(config.api.baseURI + config.api.getIntegralDetailed, {
+/*			request.post(config.api.baseURI + config.api.getIntegralDetailed, {
 				pageNum: this.page,
 				pageSize: config.pageSize,
 				type: this.props.type
@@ -56,7 +56,37 @@ export default class IntegralDetail extends React.Component {
 					isLoading: false
 				})
 				// console.warn(`requestError: ${error}`)
-			})
+			})*/
+            let newState = {
+                isLoading: false
+            };
+            let res = {
+            	code:0,
+                data:{
+                    total:2,
+                    list:[
+						{
+                            content:"签到送积分",
+                            createdAt:"2019-02-03",
+                            type:1,
+                            integral:100
+						},
+                        {
+                            content:"积分兑换",
+                            createdAt:"2019-02-03",
+                            type:2,
+                            integral:100
+                        }
+					]
+				}
+			}
+            if (res.code === 0) {
+                this.total = res.data.total;
+                this.page++;
+                let list = this.state.list;
+                newState.list = list.concat(res.data.list)
+            }
+            this.setState(newState)
 		})
 		
 	}
