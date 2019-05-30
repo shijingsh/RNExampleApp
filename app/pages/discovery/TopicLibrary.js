@@ -51,7 +51,7 @@ export default class TopicLibrary extends NavigatorPage {
 		this.setState({
 			isLoading: true
 		});
-		let uri = config.api.baseURI + config.api.getTopicLibraryAllList;
+/*		let uri = config.api.baseURI + config.api.getTopicLibraryAllList;
 		config.loadData(_ => {
 			request.post(uri, {
 				pageNum: this.page,
@@ -74,8 +74,39 @@ export default class TopicLibrary extends NavigatorPage {
 				})
 				// console.warn(`requestError: ${error}`)
 			})
-		})
-		
+		})*/
+
+        let newState = {
+            isLoading: false
+        };
+        // log(res)
+		let res = {
+			code:0,
+            data:{
+                total:2,
+                list:[
+                    {
+                    	user:{
+                            _id:'10001',
+                            username:'于何处',
+                            gender:1,
+                        },
+                        subjectName:'subjectName',
+                        joins:11,
+                        dynamics:100000,
+                        title:'于何处于何处于何处',
+                        isFollow:true,
+                    }
+                ]
+            }
+		}
+        if (res.code === 0) {
+            this.total = res.data.total;
+            this.page++;
+            let list = this.state.list;
+            newState.list = list.concat(res.data.list)
+        }
+        this.setState(newState)
 	}
 	
 	_fetchDataWithRefreshing = () => {

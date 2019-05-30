@@ -11,7 +11,7 @@ import styleUtil from "../../common/styleUtil";
 export default class SearchView extends React.Component {
 	static defaultProps = {
 		selectValue:'题目',
-		showSelectValue:true
+		showSelectValue:true,
 	};
 	
 	constructor(props) {
@@ -46,6 +46,7 @@ export default class SearchView extends React.Component {
 			onSubmit,
 			showSelectValue
 		} = this.props;
+		let _this = this;
 		let leftWidth = showSelectValue ? 60 : 0;
 		return (
 			<View style={{
@@ -67,7 +68,7 @@ export default class SearchView extends React.Component {
 					}}
 					size={'sm'}
 					pickerType={'popover'}
-					items={this.items}
+					items={_this.items}
 					onSelected={(item, index) => this.props.onSelectedValue(item, index)}
 				/>}
 				<SearchBar

@@ -50,7 +50,7 @@ export default class SubjectList extends NavigatorPage {
 		this.setState({
 			isLoading: true
 		});
-		setTimeout(() => {
+/*		setTimeout(() => {
 			this.setState({
 				isLoading: false
 			})
@@ -78,7 +78,31 @@ export default class SubjectList extends NavigatorPage {
 				// console.warn(`requestError: ${error}`)
 			})
 		})
-		
+		*/
+        let newState = {
+            isLoading: false
+        };
+        let res = {
+        	code:0,
+            data:{
+                total:2,
+                list:[
+					{
+                        subjectName:'subjectName',
+                        joins:11,
+                        dynamics:100000,
+                        isFollow:true,
+					}
+				]
+			}
+		}
+        if (res.code === 0) {
+            this.total = res.data.total;
+            this.page++;
+            let list = this.state.list;
+            newState.list = list.concat(res.data.list)
+        }
+        this.setState(newState)
 	};
 	
 	_fetchDataWithRefreshing = () => {

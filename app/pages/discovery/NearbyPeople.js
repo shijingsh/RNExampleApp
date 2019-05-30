@@ -72,7 +72,7 @@ export default class NearbyPeople extends NavigatorPage {
 	};
 	
 	fetchNearbyUser = (latitude, longitude) => {
-		setTimeout(_ => {
+/*		setTimeout(_ => {
 			request.post(config.api.baseURI + config.api.getNearByUser, {
 				latitude,
 				longitude
@@ -86,7 +86,23 @@ export default class NearbyPeople extends NavigatorPage {
 			}).catch(e => {
 			
 			})
-		}, config.loadingTime)
+		}, config.loadingTime)*/
+		let res = {
+			code:0,
+			data:[
+				{
+                    _id:'10001',
+                    username:'于何处',
+                    gender:1,
+				}
+			]
+		}
+        if (res.code === 0) {
+            this.setState({
+                list: res.data,
+                isLoad: false
+            })
+        }
 	};
 	
 	renderPage() {

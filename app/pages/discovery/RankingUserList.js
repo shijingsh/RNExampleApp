@@ -35,7 +35,7 @@ export default class RankingUserList extends React.Component {
 	}
 	
 	fetchData = () => {
-		request.post(this.props.uri, {}).then(res => {
+/*		request.post(this.props.uri, {}).then(res => {
 			if (res.code === 0) {
 				this.setState({
 					list: res.data,
@@ -50,7 +50,46 @@ export default class RankingUserList extends React.Component {
 			this.setState({
 				isLoaded:true
 			})
-		})
+		})*/
+        let res = {
+            code:0,
+            data:[
+                {
+                    username:'subjectName',
+                    joins:11,
+                    dynamics:100000,
+                    gender:1,
+                    rankCount:1000
+                },
+                {
+                    username:'subjectName',
+                    joins:11,
+                    dynamics:100000,
+                    gender:1,
+                    rankCount:1000
+                },
+                {
+                    username:'subjectName',
+                    joins:11,
+                    dynamics:100000,
+                    gender:1,
+                    rankCount:1000
+                },
+                {
+                    username:'subjectName',
+                    joins:11,
+                    dynamics:100000,
+                    gender:1,
+                    rankCount:1000
+                }
+            ]
+        }
+        if (res.code === 0) {
+            this.setState({
+                list: res.data,
+                isLoaded:true
+            })
+        }
 	};
 	
 	render() {

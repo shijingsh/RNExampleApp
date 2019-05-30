@@ -42,14 +42,32 @@ export default class TopicCategory extends NavigatorPage {
 	}
 	
 	fetchCategory = () => {
-		request.post(config.api.baseURI + config.api.getCategory)
+/*		request.post(config.api.baseURI + config.api.getCategory)
 			.then(res => {
 				if (res.code === 0) {
 					this.setState({
 						category: res.data
 					})
 				}
-			})
+			})*/
+		let res = {
+			code:0,
+            data:[
+				{
+                    name:'name',
+                    cover:'http://pic18.nipic.com/20120204/8339340_144203764154_2.jpg'
+				},
+                {
+                    name:'name',
+                    cover:'http://pic18.nipic.com/20120204/8339340_144203764154_2.jpg'
+                }
+			]
+		}
+        if (res.code === 0) {
+            this.setState({
+                category: res.data
+            })
+        }
 	};
 	
 	renderPage() {
