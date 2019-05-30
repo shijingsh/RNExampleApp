@@ -30,7 +30,7 @@ import HomeIndex from "../home/HomeIndex";
 import EditTextArea from "./profile/EditTextArea";
 import TabNavBar from "../../screens/TabNavBar";
 //--import FriendDynamic from "../message/FriendDynamic";
-//--import UserDynamicIndex from "../discovery/UserDynamicIndex";
+import UserDynamicIndex from "../discovery/UserDynamicIndex";
 import PhoneLogin from "./PhoneLogin";
 
 const TAB_LIST = (context) => (
@@ -58,7 +58,7 @@ const TAB_LIST = (context) => (
 			}
 		},
 		{
-			screen: TopicList,//UserDynamicIndex
+			screen: UserDynamicIndex,//UserDynamicIndex
 			title: '发布的动态',
 			total: context.state.user.submitDynamicTotal,
 			icon: require('../../assets/image/dynamic.png'),
