@@ -1,4 +1,4 @@
-/*
+
 import config from "./config";
 import ReconnectingWebSocket from "reconnecting-websocket";
 import toast from "./toast";
@@ -529,4 +529,4 @@ class SendMessage {
 			chatBody: this.chatBody
 		};
 	}
-}*/
+}
