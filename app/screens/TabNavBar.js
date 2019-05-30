@@ -19,7 +19,7 @@ import DiscoveryIndex from "../pages/discovery/DiscoveryIndex";
 import AccountIndex from "../pages/account/AccountIndex";
 import {Icon} from 'react-native-elements'
 import navigate from "./navigate";
-//import AddTopic from "../pages/topic/AddTopic";
+import AddTopic from "../pages/topic/AddTopic";
 import toast from "../common/toast";
 import PhoneLogin from "../pages/account/PhoneLogin";
 import config from "../common/config";
@@ -472,7 +472,7 @@ export default class TabNavBar extends React.Component {
 					if (!config.user || !config.user._id || !config.user.accessToken) {
 						navigate.push(PhoneLogin)
 					} else {
-						//navigate.push(AddTopic)
+						navigate.push(AddTopic)
 					}
 				}}
 			/>
