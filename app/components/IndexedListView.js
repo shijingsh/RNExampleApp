@@ -35,7 +35,7 @@ export class AlphaBetaList extends Component {
 		return (
 			<View style={[styles.alphaBetaList, {
 				position: 'absolute',
-				top: styleUtil.window.height / 2 - this.itemHeight - styleUtil.navBarHeight,
+				top: styleUtil.window.height / 2 - 20 - styleUtil.navBarHeight,//this.itemHeight
 				right: -2,
 			}]}>
 				<View onLayout={this.onLayout}>
@@ -166,7 +166,7 @@ export default class IndexedListView extends Component {
 					renderRow={renderRow || this.renderRow}
 					renderHeader={renderHeader && renderHeader}
 					renderSeparator={renderSeparator && renderSeparator}
-					renderSectionHeader={renderSectionHeader || this.renderSectionHeader}
+					//renderSectionHeader={renderSectionHeader || this.renderSectionHeader}
 					{...this.props}
 				/>
 				{/*<AlphaBetaList onLetterPress={this.scrollToSection} {...{letters, alphaBetaListStyle, letterStyle}} />*/}

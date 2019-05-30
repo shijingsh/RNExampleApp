@@ -42,7 +42,7 @@ export default class ChatList extends React.Component {
 		this.state = {
 			list: [],
 			noticeCount: 0
-			// list: Array(20).fill('').map((_, i) => `item #${i}`),
+            //list: Array(20).fill('').map((_, i) => `item #${i}`)
 		}
 		this._isMounted = false;
 		this.chatList = [];
@@ -63,6 +63,35 @@ export default class ChatList extends React.Component {
 		DeviceEventEmitter.addListener('updateList', v => this.updateList(v))
 		DeviceEventEmitter.addListener('onReceive', v => this.onReceive(v))
 		DeviceEventEmitter.addListener('listenerChatMsg', this.listenerChatMsg)
+		//模拟数据
+		let chatList= [
+			{
+                toId:'20001',
+                unreadMsg:10,
+                avatar:'https://img.52z.com/upload/news/image/20181108/20181108204521_83402.jpg',
+                mutedUserId:'10001',
+                isMuted:true,
+                name:'王美美',
+                createdAt:'2019-06-01',
+                fromUserId:'10001',
+                msgType:''
+			},
+            {
+                toId:'20002',
+                unreadMsg:5,
+                mutedUserId:'10001',
+                isMuted:true,
+                name:'在何方',
+                createdAt:'2019-06-01',
+                fromUserId:'10002',
+                fromUser:{
+                    username:'王小美'
+				},
+                msgType:''
+            }
+		]
+        config.setChatList(chatList)
+        //end 模拟数据
 		this._getChatList();
 		config.getSystemNotice().then(list => {
 			this.setState({noticeCount: list.length})
@@ -131,6 +160,7 @@ export default class ChatList extends React.Component {
 	
 	listenerChatMsg = () => {
 		imessage.onReceiveMsg(data => this.onReceive(data))
+
 	};
 	
 	onReceive(res) {

@@ -139,7 +139,7 @@ export default class MessageIndex extends NavigatorPage {
     };
 
     fetchFriends = () => {
-        request.post(config.api.baseURI + config.api.getFriendList)
+/*        request.post(config.api.baseURI + config.api.getFriendList)
             .then(res => {
                 // console.log(res)
                 if (res.code === 0) {
@@ -150,7 +150,28 @@ export default class MessageIndex extends NavigatorPage {
                         friendList: list
                     })
                 }
-            })
+            })*/
+        let res = {
+            code:0,
+            data:[
+                {
+                    gender:2,
+                    avatar:'https://img.52z.com/upload/news/image/20181108/20181108204521_83402.jpg',
+                    username:'王小美'
+                },
+                {
+                    gender:1,
+                    avatar:'https://img.52z.com/upload/news/image/20181108/20181108204521_83402.jpg',
+                    username:'王亚男'
+                }
+            ]
+        }
+        let list = utils.sortByPinYin(res.data)
+        config.friendList = res.data;
+        config.setFriendList(list)
+        this.setState({
+            friendList: list
+        })
     };
 
     renderNavBar = props => {

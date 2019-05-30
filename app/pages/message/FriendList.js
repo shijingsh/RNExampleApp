@@ -238,7 +238,11 @@ export default class FriendList extends Component {
 			</View>
 		)
 	};
-	
+    renderSeparator = (sectionID, rowID) => {
+        return (
+			<View style={styles.separator} key={sectionID + '_' + rowID}/>
+        );
+    }
 	onChangeVisibleRows = (visibleRows, changedRows) => {
 		// console.warn(visibleRows)
 		let list = this.state.list;
@@ -262,13 +266,13 @@ export default class FriendList extends Component {
 					renderRow={this._renderRow}
 					renderFooter={this._renderFooter}
 					renderHeader={this.renderHeader}
+					renderSeparator={this.renderSeparator}
 					// onChangeVisibleRows={this.onChangeVisibleRows}
 				/>
 				<AlphaBetaList
 					onLetterPress={letter => {
 						this.indexList && this.indexList.scrollToSection(letter)
 					}}
-					letters={this.state.letters}
 				/>
 			</View>
 		)
