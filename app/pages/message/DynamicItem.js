@@ -202,14 +202,14 @@ export default class DynamicItem extends React.Component {
 			// {name: 'ios-chatbubbles-outline', count: item.comments},
 			// {name: 'ios-share-outline', count: item.shares},
 			{
-				name: isLike ? 'ios-heart' : 'ios-heart-outline',
+				name: isLike ? 'ios-heart' : 'ios-heart',
 				type: 'ionicon',
 				text: utils.numberToTenThousand(likes) + '次点赞',
 				color: isLike ? '#EE4000' : '#666',
 				onPress: this._thumbsUpOnPress
 			},
 			{
-				name: comments > 0 ? 'ios-chatbubbles' : 'ios-chatbubbles-outline',
+				name: comments > 0 ? 'ios-chatbubbles' : 'ios-chatbubbles',
 				type: 'ionicon',
 				color: comments > 0 ? styleUtil.themeColor : '#666',
 				text: utils.numberToTenThousand(comments) + '条评论',

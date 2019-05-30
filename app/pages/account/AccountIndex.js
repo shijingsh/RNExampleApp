@@ -37,8 +37,7 @@ import AccountSecurity from "./AccountSecurity";
 const list = [
 	 {
 	 	title: '账户安全',
-	 	icon: 'lock',
-	 	type: 'MaterialIcons',
+        icon: require('../../assets/image/lock.png'),
 	 	onPress: _ => navigate.push(AccountSecurity)
 	 },
 	{

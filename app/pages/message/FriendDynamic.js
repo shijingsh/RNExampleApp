@@ -322,7 +322,7 @@ export default class FriendDynamic extends NavigatorPage {
 			isLoading: true
 		});
 		// console.warn('loading')
-		setTimeout(() => {
+		/*setTimeout(() => {
 			request.post(config.api.baseURI + config.api.dynamicList, {
 				pageNum: this.page,
 				pageSize: config.pageSize,
@@ -354,7 +354,42 @@ export default class FriendDynamic extends NavigatorPage {
 				// console.warn(`requestError: ${error}`)
 			})
 		}, config.loadingTime)
-		
+
+*/
+        let res = {
+            code:0,
+            data:{
+                list:[
+                    {
+                        user:{
+                            _id:'10001',
+                            username:'于何处'
+                        },
+                        createdAt:'2019-03-01',
+                        subject:{
+                            subjectName:'subjectName'
+                        },
+                        content:"content"
+                    }
+                ]
+            }
+        }
+        let newState = {
+            isLoading: false
+        };
+        if (res.code === 0) {
+            this.total = res.data.total;
+            this.page++;
+            let list = this.state.list;
+            newState.list = list.concat(res.data.list)
+        }
+        this.setState(
+            newState,
+            () => {
+                let list = this.state.list;
+                this.props.setLastCreatedAt && this.props.setLastCreatedAt(list)
+            }
+        );
 	};
 	
 	fetchDataWithRefreshing = () => {
@@ -370,7 +405,7 @@ export default class FriendDynamic extends NavigatorPage {
 		// let list = this.state.list;
 		// let lastTime = list.length > 0 ? utils.timeStampToStr(list[0].createdAt) : undefined;
 		// console.log('loading')
-		request.post(config.api.baseURI + config.api.dynamicList, {
+/*		request.post(config.api.baseURI + config.api.dynamicList, {
 			pageNum: 1,
 			pageSize: config.pageSize,
 			// createdAt: lastTime,
@@ -409,7 +444,28 @@ export default class FriendDynamic extends NavigatorPage {
 				isRefreshing: false
 			})
 			// console.warn(`requestError: ${error}`)
-		})
+		})*/
+		let res = {
+            code:0,
+			data:{
+            	list:[
+					{
+                        user:{
+                            _id:'10001',
+                            username:'于何处'
+						},
+                        createdAt:'2019-03-01',
+                        subject:{
+                            subjectName:'subjectName'
+						},
+                        content:"content"
+					}
+				]
+			}
+		}
+        let newList = res.data.list;
+        let list = this.state.list;
+        this.compareList(list, newList);
 	};
 	
 	compareList = (oldList, newList) => {

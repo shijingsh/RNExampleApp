@@ -46,7 +46,7 @@ export default class UserAbout extends NavigatorPage {
 					<Text style={styles.text}>用户名：{user.username}</Text>
 					<Text style={styles.text}>性别：{user.gender === 2 ? '女' : '男'}</Text>
 					<Text style={styles.text}>职业：{user.occupation || '未填写'}</Text>
-					<Text style={styles.text}>生日：{utils.formatBirth(user.birth.split('-'))}</Text>
+					<Text style={styles.text}>生日：06-06</Text>
 					<Text style={styles.text}>地区：{!user.region ? '未填写' : user.region.replace(',', ' ')}</Text>
 					<View style={styles.title}>
 						<Icon
@@ -57,7 +57,7 @@ export default class UserAbout extends NavigatorPage {
 						/>
 						<Text style={styles.h5}>个人简介</Text>
 					</View>
-					<Text>{user.summary}</Text>
+					<Text>个人简介个人简介个人简介</Text>
 				</ScrollView>
 			</View>
 		)
