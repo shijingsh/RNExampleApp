@@ -10,7 +10,7 @@ import {
 	StatusBar
 } from 'react-native'
 
-import NetInfo from "@react-native-community/netinfo";
+//import NetInfo from "@react-native-community/netinfo";
 import {TabView, Badge, NavigationBar} from 'teaset'
 import HomeIndex from "../pages/home/HomeIndex";
 import MessageIndex from "../pages/message/MessageIndex";
@@ -81,10 +81,10 @@ export default class TabNavBar extends React.Component {
         DeviceEventEmitter.addListener('updateMessageBadge', val => this.updateMessageBadge(val));
         DeviceEventEmitter.addListener('updateDynamicBadge', val => this.updateDynamicBadge(val));
         AppState.addEventListener('change', this.handleAppStateChange);
-        NetInfo.isConnected.addEventListener(
+/*        NetInfo.isConnected.addEventListener(
             'connectionChange',
             this.handleFirstConnectivityChange
-        );
+        );*/
     }
 
     handleFirstConnectivityChange(isConnected) {
@@ -111,10 +111,10 @@ export default class TabNavBar extends React.Component {
         JPushModule.removeGetRegistrationIdListener(getRegistrationIdEvent)
         JPushModule.removeReceiveNotificationListener(this.receiveNotification);
         JPushModule.clearAllNotifications()
-        NetInfo.isConnected.removeEventListener(
+/*        NetInfo.isConnected.removeEventListener(
             'connectionChange',
             this.handleFirstConnectivityChange
-        );
+        );*/
         imessage.closePing()
     }
 

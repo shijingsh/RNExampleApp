@@ -16,7 +16,7 @@ import navigate from "../../screens/navigate";
 import TabNavBar from "../../screens/TabNavBar";
 import {NavigationBar} from 'teaset'
 //import JPushModule from 'jpush-react-native';
-import * as DeviceInfo from 'react-native-device-info';
+//import * as DeviceInfo from 'react-native-device-info';
 import config from "../../common/config";
 
 
@@ -39,11 +39,11 @@ export default class AccountLogin extends Component {
 	
 	getDeviceInfo = () => {
 		return {
-			deviceName: DeviceInfo.getDeviceName(),//设备名称
-			userAgent: DeviceInfo.getUserAgent(),//设备代理信息
-			uniqueId: DeviceInfo.getUniqueID(),//设备唯一id
-			systemName: DeviceInfo.getSystemName(),//系统名称
-			systemVersion: DeviceInfo.getSystemVersion(),//系统版本
+			//deviceName: DeviceInfo.getDeviceName(),//设备名称
+			//userAgent: DeviceInfo.getUserAgent(),//设备代理信息
+			//uniqueId: DeviceInfo.getUniqueID(),//设备唯一id
+			//systemName: DeviceInfo.getSystemName(),//系统名称
+			//systemVersion: DeviceInfo.getSystemVersion(),//系统版本
 		}
 	};
 	
