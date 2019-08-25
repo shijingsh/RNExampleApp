@@ -5,7 +5,7 @@ import android.app.Application;
 import com.facebook.react.ReactApplication;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
-import me.jhen.react.BadgePackage;
+//import me.jhen.react.BadgePackage;
 //import com.swmansion.reanimated.ReanimatedPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.dooboolab.RNIap.RNIapPackage;
@@ -41,7 +41,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new BlurViewPackage(),
             new ReactNativeContacts(),
-            new BadgePackage(),
+            //new BadgePackage(),
             //new ReanimatedPackage(),
             new BlurViewPackage(),
             new RNIapPackage(),

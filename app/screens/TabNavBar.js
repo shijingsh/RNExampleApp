@@ -28,7 +28,7 @@ import JPushModule from 'jpush-react-native';
 import Search from "../pages/discovery/Search";
 import request from "../common/request";
 import utils from "../common/utils";
-import BadgeAndroid from 'react-native-android-badge'
+//import BadgeAndroid from 'react-native-android-badge'
 import {EVENTS} from "../common/IMessage";
 
 const ACTIVE_STYLE = {width: 28, height: 28};
@@ -395,7 +395,7 @@ export default class TabNavBar extends React.Component {
             JPushModule.setBadge(n, success => {
             });
         } else {
-            BadgeAndroid.setBadge(n)
+           // BadgeAndroid.setBadge(n)
         }
 
         this.updateFriendBadgeCount({message: n})

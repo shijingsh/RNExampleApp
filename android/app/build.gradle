@@ -107,6 +107,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         manifestPlaceholders = [
                 JPUSH_APPKEY: "e1cdd818719dace1d3afff5e",
                 APP_CHANNEL : "default"
@@ -145,7 +146,6 @@ android {
 dependencies {
     implementation project(':@react-native-community_blur')
     implementation project(':react-native-contacts')
-    implementation project(':react-native-android-badge')
     implementation project(':jcore-react-native')
     implementation project(':jpush-react-native')
     implementation project(':react-native-iap')
