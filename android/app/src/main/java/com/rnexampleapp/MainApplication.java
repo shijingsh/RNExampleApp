@@ -6,7 +6,7 @@ import com.facebook.react.ReactApplication;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import me.jhen.react.BadgePackage;
-import com.swmansion.reanimated.ReanimatedPackage;
+//import com.swmansion.reanimated.ReanimatedPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import com.dooboolab.RNIap.RNIapPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
@@ -42,7 +42,7 @@ public class MainApplication extends Application implements ReactApplication {
             new BlurViewPackage(),
             new ReactNativeContacts(),
             new BadgePackage(),
-            new ReanimatedPackage(),
+            //new ReanimatedPackage(),
             new BlurViewPackage(),
             new RNIapPackage(),
             new AsyncStoragePackage(),
