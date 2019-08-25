@@ -3,11 +3,11 @@ package com.rnexampleapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.cmcewen.blurview.BlurViewPackage;
+//import com.cmcewen.blurview.BlurViewPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 //import me.jhen.react.BadgePackage;
 //import com.swmansion.reanimated.ReanimatedPackage;
-import com.cmcewen.blurview.BlurViewPackage;
+//import com.cmcewen.blurview.BlurViewPackage;
 import com.dooboolab.RNIap.RNIapPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
@@ -39,11 +39,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new BlurViewPackage(),
+            //new BlurViewPackage(),
             new ReactNativeContacts(),
             //new BadgePackage(),
             //new ReanimatedPackage(),
-            new BlurViewPackage(),
+            //new BlurViewPackage(),
             new RNIapPackage(),
             new AsyncStoragePackage(),
             //new NetInfoPackage(),

@@ -144,7 +144,6 @@ android {
 }
 
 dependencies {
-    implementation project(':@react-native-community_blur')
     implementation project(':react-native-contacts')
     implementation project(':jcore-react-native')
     implementation project(':jpush-react-native')
