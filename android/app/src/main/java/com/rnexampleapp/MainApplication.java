@@ -13,7 +13,6 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
-import cn.jpush.reactnativejpush.JPushPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -49,8 +48,7 @@ public class MainApplication extends Application implements ReactApplication {
             //new NetInfoPackage(),
             new RNFetchBlobPackage(),
             new VectorIconsPackage(),
-            new RNSpinkitPackage(),
-            new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG)//,
+            new RNSpinkitPackage()
             //new RNDeviceInfo()
       );
     }
