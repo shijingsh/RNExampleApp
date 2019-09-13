@@ -33,6 +33,7 @@ to learn  https://github.com/Evai/RNExampleApp
 
 ```
 yarn config delete proxy
+yarn config delete https-proxy
 npm config rm proxy
 npm config rm https-proxy
 ```
@@ -55,5 +56,9 @@ react-native run-android
         报错的地方全部删除
      *  @Nullable 编译报错    
         全部删除
+     *  react-native-tab-view  集成比较麻烦，见git  
+        https://github.com/react-native-community/react-native-tab-view#readme
+     *  jpush-react-native，见git    
+        https://github.com/jpush/jpush-react-native#readme
 ## License
 MIT License [read](https://github.com/Evai/RNExampleApp/blob/master/LICENSE)

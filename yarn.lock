@@ -3195,7 +3195,7 @@ istanbul-reports@^2.2.6:
   dependencies:
     handlebars "^4.1.2"
 
-jcore-react-native@^1.3.2:
+jcore-react-native@^1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/jcore-react-native/-/jcore-react-native-1.3.5.tgz#63a01f0e0bc53b78cd88493866b069ee3122be0d"
   integrity sha512-WNPV5PRfyQ8/LwjcWQlVJ4fjIjj0yZ3B7KDOY1HWKkVAUbjfdxFNMIHRlziRIQHYRPWcSbXLtW/9Y4ir90YNkQ==
@@ -3579,7 +3579,7 @@ jest@^24.8.0:
     import-local "^2.0.0"
     jest-cli "^24.9.0"
 
-jpush-react-native@^2.5.3:
+jpush-react-native@^2.5.5:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/jpush-react-native/-/jpush-react-native-2.5.5.tgz#d3679340fe204be8c2cb36998f21cccbeacc6ac4"
   integrity sha512-28lWv4YbgDK2DYP4hdGFq1ttgb6L7AdHEB9dKT1zkWctGh/m3/Hp3xNriSn1zC+65WO0+2pHH/NyJFDZEnrN3A==
@@ -5163,7 +5163,7 @@ react-native-elements@^1.1.0:
     react-native-ratings "^6.3.0"
     react-native-status-bar-height "^2.2.0"
 
-react-native-gesture-handler@^1.2.2:
+react-native-gesture-handler@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.4.1.tgz#c38d9e57637b95e221722a79f2bafac62e3aeb21"
   integrity sha512-Ffcs+SbEbkGaal0CClYL+v7A9y4OA5G5lW01qrzjxaqASp5C8BfnWSKuqYKE00s6bLwE5L4xnlHkG0yIxAtbrQ==
@@ -5195,6 +5195,11 @@ react-native-ratings@^6.3.0:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
+react-native-reanimated@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
+  integrity sha512-vkWRHrPK5qfHP/ZawlRoo38oeYe9NZaaOH/lmFxRcsKzaSK6x3H5ZPXI8lK6MfTLveqwo1QhJje3zIKXO4nQQw==
+
 react-native-scrollable-tab-view@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/react-native-scrollable-tab-view/-/react-native-scrollable-tab-view-0.10.0.tgz#8ce7908254685ee37d35df7d849676eaa1e81132"
@@ -5216,7 +5221,7 @@ react-native-status-bar-height@^2.2.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.4.0.tgz#de8cee4bb733a196167210d2d0bc1fa10acba3e3"
   integrity sha512-pWvZFlyIHiuxLugLioq97vXiaGSovFXEyxt76wQtbq0gxv4dGXMPqYow46UmpwOgeJpBhqL1E0EKxnfJRrFz5w==
 
-react-native-tab-view@^2.5.0:
+react-native-tab-view@^2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.10.0.tgz#5e249e5650502010013449ffd4e5edc18a95364b"
   integrity sha512-qgexVz5eO4yaFjdkmn/sURXgVvaBo6pZD/q1eoca96SbPVbaH3WzVhF3bRUfeTHwZkXwznFTpS3JURqIFU8vQA==

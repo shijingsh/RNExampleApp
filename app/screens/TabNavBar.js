@@ -96,7 +96,7 @@ export default class TabNavBar extends React.Component {
     componentDidMount() {
         // config.removeAllChatList()
         this.init();
-        this.initJPush();
+        //this.initJPush();
         this.spring();
     }
 
@@ -259,7 +259,7 @@ export default class TabNavBar extends React.Component {
 
     initJPush = () => {
         if (Platform.OS === 'android') {
-            JPushModule.initPush();
+            JPushModule.init();
             JPushModule.notifyJSDidLoad(resultCode => {
             })
         } else {
