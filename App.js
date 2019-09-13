@@ -15,7 +15,7 @@ import storageUtil from './app/common/storageUtil'
 import toast from "./app/common/toast";
 //import SplashScreen from 'react-native-splash-screen'
 //import CodePush from 'react-native-code-push'
-//import IMessage from "./app/common/IMessage";
+import IMessage from "./app/common/IMessage";
 // import {Geolocation} from "react-native-amap-geolocation";
 //export const GeoLocation = Platform.OS === 'ios' ? null : require('react-native-amap-geolocation').Geolocation;
 
@@ -24,7 +24,7 @@ global.request = Request;
 global.config = config;
 global.storageUtil = storageUtil;
 global.toast = toast;
-//global.imessage = new IMessage();
+global.imessage = new IMessage();
 
 Theme.set({
     fitIPhoneX: true,

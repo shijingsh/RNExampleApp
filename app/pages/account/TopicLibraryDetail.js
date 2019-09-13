@@ -23,15 +23,15 @@ import navigate from "../../screens/navigate";
 import {DEFAULT_WINDOW_MULTIPLIER, SCREEN_WIDTH} from "./profile/constants";
 import {Avatar, Icon} from "react-native-elements";
 import NavBar from "../../components/NavBar";
-import {BlurView} from 'react-native-blur';
+//import {BlurView} from 'react-native-blur';
 import Profile from "./Profile";
 import {ListRow, NavigationBar, Button, PullPicker} from 'teaset'
 import request from "../../common/request";
 import ScrollPage from "../../components/ScrollPage";
-import TopicDetail from "../home/TopicDetail";
+//--import TopicDetail from "../home/TopicDetail";
 import config from "../../common/config";
 import toast from "../../common/toast";
-import EditTopicLibrary from "./EditTopicLibrary";
+//--import EditTopicLibrary from "./EditTopicLibrary";
 import LoadingMore from "../../components/load/LoadingMore";
 import TopicComment from "../home/TopicComment";
 import ImageCached from "../../components/ImageCached";
@@ -166,10 +166,12 @@ export default class TopicLibraryDetail extends Component {
 		return (
 			<ListRow
 				key={index}
-				onPress={_ => navigate.push(TopicDetail, {
+				onPress={_ => {
+{/*					navigate.push(TopicDetail, {
 					item,
 					removeTopic: this.removeTopic
-				})}
+					})*/}
+				}}
 				title={
 					<View style={{
 						justifyContent: 'space-between',
@@ -494,9 +496,9 @@ class LibraryBackground extends React.Component {
 					if (userId === config.user._id) {
 						items.push({
 							title: '编辑题库信息', onPress: _ => {
-								navigate.pushNotNavBar(EditTopicLibrary, {
+{/*								navigate.pushNotNavBar(EditTopicLibrary, {
 									info: this.props.item
-								})
+								})*/}
 							}
 						}, {
 							title: '删除', onPress: _ => {
@@ -828,7 +830,7 @@ class LibraryInfo extends React.Component {
 	imageLoaded = () => {
 		this.setState({viewRef: findNodeHandle(this.backgroundImage)});
 	};
-	
+	/*
 	renderBlur = (info, showInfo) => {
 		return (
 			<View style={{flex:1}}>
@@ -908,9 +910,9 @@ class LibraryInfo extends React.Component {
 						title={'编辑'}
 						onPress={_ => {
 							showInfo(false);
-							navigate.pushNotNavBar(EditTopicLibrary, {
+{/!*							navigate.pushNotNavBar(EditTopicLibrary, {
 								info
-							})
+							})*!/}
 						}}
 						titleStyle={{color: 'white'}}
 						style={{
@@ -941,7 +943,7 @@ class LibraryInfo extends React.Component {
 				</View>}
 			</View>
 		)
-	}
+	}*/
 	
 	render() {
 		let {info, showInfo} = this.props;
@@ -964,7 +966,7 @@ class LibraryInfo extends React.Component {
 						backgroundColor: 'rgba(0,0,0,.5)'
 					}}
 					onLoadEnd={_ => this.imageLoaded()}/>
-				{this.renderBlur(info, showInfo)}
+				{/*{this.renderBlur(info, showInfo)}*/}
 			</Animated.View>
 		)
 	}

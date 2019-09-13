@@ -1,4 +1,4 @@
-/*
+
 import config from "./config";
 import ReconnectingWebSocket from "reconnecting-websocket";
 import toast from "./toast";
@@ -261,10 +261,10 @@ export default class IMessage {
 	
 	pingPong = () => {
 		this.closePing();
-		this._pingIM = setInterval(() => {
+/*		this._pingIM = setInterval(() => {
 			this.ping();
 			// console.log('ping')
-		}, 150000)
+		}, 150000)*/
 	};
 	
 	_createMessage = (data, event) => {
@@ -529,4 +529,4 @@ class SendMessage {
 			chatBody: this.chatBody
 		};
 	}
-}*/
+}

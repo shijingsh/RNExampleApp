@@ -14,7 +14,7 @@ import {
 	SCREEN_WIDTH
 } from "./constants";
 
-import {BlurView} from 'react-native-blur';
+//import {BlurView} from 'react-native-blur';
 
 import PropTypes from 'prop-types'
 import styleUtil from "../../../common/styleUtil";
