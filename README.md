@@ -60,5 +60,9 @@ react-native run-android
         https://github.com/react-native-community/react-native-tab-view#readme
      *  jpush-react-native，见git    
         https://github.com/jpush/jpush-react-native#readme
+        
+<p align="left">
+<a href="https://github.com/mg365/RNExampleApp/app-release.apk">apk 下载</a>
+</p>        
 ## License
 MIT License [read](https://github.com/Evai/RNExampleApp/blob/master/LICENSE)
