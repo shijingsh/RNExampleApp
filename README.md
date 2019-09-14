@@ -62,7 +62,7 @@ react-native run-android
         https://github.com/jpush/jpush-react-native#readme
         
 <p align="left">
-<a href="https://github.com/mg365/RNExampleApp/app-release.apk">apk 下载</a>
+<a href="https://github.com/mg365/RNExampleApp/blob/master/app-release.apk">apk 下载</a>
 </p>        
 ## License
 MIT License [read](https://github.com/Evai/RNExampleApp/blob/master/LICENSE)
